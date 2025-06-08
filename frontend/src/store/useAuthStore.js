@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { useChatStore } from './useChatStore';
 import { io } from 'socket.io-client'
 
-const BASE_URL = import.meta.env.VITE_PUBLIC_SOCKET_URL;
+const BASE_URL = import.meta.env.MODE === "development" ? import.meta.env.VITE_PUBLIC_SOCKET_URL : "/"
 
 export const useAuthStore = create((set, get) => ({
     authUser: null,
